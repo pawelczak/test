@@ -1,14 +1,13 @@
-
+<!DOCTYPE html>
 <html>
 <head>
         <title>sklep Mistrzów</title>
         <link rel="stylesheet" href="style.css"/>
-        <link href="koszyk.html"/> 
-
+        <meta charset="UTF-8">
 </head>
     
     
-<body onload="suma();dokoszyka()">
+<body >
 
     <h1>
 
@@ -25,21 +24,21 @@
     <div class="INFOokulary">
         <image class="okulary1" src="image/okulary1.png" ></image>
         <input id="okular1" class="cena" type="text" value="199.99 zł"/>
-        <button class="dokoszyka" onclick = "dokoszyka1();" value="199.99" name="okulary" id="okulary"> do Koszyka</button>
+        <button class="dokoszyka" onclick = "dokoszyka('okulary', 1, 200);" value="199.99" name="okulary" id="okulary"> do Koszyka</button>
     </div>
     
     <div class="INFOkoszulka">
         <image class="koszulka1" src="image/koszulka1.png"></image>
         <input id="koszulka1" class="cena" type="text" value="499.99 zł"/>
-        <button class="dokoszyka" onclick = "dokoszyka2();"> do Koszyka</button>
+        <button class="dokoszyka" onclick = "dokoszyka('koszulka', 1, 500);"> do Koszyka</button>
     </div>
     
     <div class="tabela">
     <table border="1"  class="table">
     
-        <th id="name">produkt</th>
-        <th id="ilość">ilość</th>
-        <th id="cena">cena</th>
+        <!-- <th id="name">produkt</th>
+        <th id="ilosc">ilosc</th>
+        <th id="cena">cena</th> -->
     
     
     </table>
@@ -50,6 +49,8 @@
     <span  id="suma"></span>
     </div>
     
-    <script type="javascript/text" src="basket.js"></script>
+    <script type="application/javascript" src="basket.js" ></script>
+
+    <!-- <script type="javascript/text" src="/src/basket.js" ></script> -->
 </body>
 </html>
