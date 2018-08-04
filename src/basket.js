@@ -3,27 +3,57 @@ var koszyk = [];
 
 
 
-var Item = function(name, ilość, cena){
+var Item = function(name, ilosc, cena){
 		this.name = name
-		this.ilość = ilość
+		this.ilosc = ilosc
 		this.cena = cena
 	}
 
 var tabela = document.getElementsByTagName('table')[0];
 	
-function dokoszyka(name,ilość, cena) {
+function dokoszyka(name,ilosc, cena) {
 
+    clear();
 
 	for (var i in koszyk){
 		if (koszyk[i].name === name)	{
-			koszyk[i].ilość ++;
+            koszyk[i].ilosc ++;
+            render();
 			return;
 		}
 	}
 
-	var item = new Item(name, ilość, cena);
-	koszyk.push(item);
+	var item = new Item(name, ilosc, cena);
+    koszyk.push(item);
+    
+    
+    render();
 };
+
+function clear() {
+    for (var i = 0; i < koszyk.length; i += 1 ) {
+        tabela.deleteRow(0);
+    }
+}
+
+function render() {
+
+    for (var i = 0; i < koszyk.length; i += 1 ) {
+
+        var newRow = tabela.insertRow(tabela.rows.length);
+
+            var cel1 = newRow.insertCell(0);
+            var cel2 = newRow.insertCell(1) ;
+            var cel3 = newRow.insertCell(2);
+            var cel4 = newRow.insertCell(3);
+
+            
+            cel1.innerHTML = koszyk[i].name;
+            cel2.innerHTML = koszyk[i].ilosc;
+            cel3.innerHTML = koszyk[i].cena;
+            cel4.innerHTML = "<button>usuń</bu`tton>"
+    }
+}
 
 
 function dokoszyka1(){
@@ -38,9 +68,9 @@ function dokoszyka1(){
 
 		if (koszyk[i].name === "okulary"){
 
-			if ( koszyk[i].ilość > 1) {
-			alert()
-		//	document.getElementById("ilosc").value = koszyk[i].ilość
+			if ( koszyk[i].ilosc > 1) {
+
+		//	document.getElementById("ilosc").value = koszyk[i].ilosc
 		
 			
 			
@@ -55,7 +85,7 @@ function dokoszyka1(){
 
 			
 			cel1.innerHTML = koszyk[i].name;
-			cel2.innerHTML = koszyk[i].ilość;
+			cel2.innerHTML = koszyk[i].ilosc;
 			cel3.innerHTML = koszyk[i].cena;
 			cel4.innerHTML = "<button>usuń</button>"
 
@@ -65,8 +95,8 @@ function dokoszyka1(){
 	
 
 	}
-	/*for (koszyk[i].ilość>1) {
-		ilosc.id=koszyk[i].ilość
+	/*for (koszyk[i].ilosc>1) {
+		ilosc.id=koszyk[i].ilosc
 	}*/
 
 			console.log(koszyk);
@@ -97,7 +127,7 @@ function dokoszyka2() {
 			
 
 			cel1.innerHTML = koszyk[i].name;
-			cel2.innerHTML = koszyk[i].ilość;
+			cel2.innerHTML = koszyk[i].ilosc;
 			cel3.innerHTML = koszyk[i].cena;
 			cel4.innerHTML = "<button>usuń</button>"
 }
@@ -174,7 +204,9 @@ function suma(){
 
 	for (var i = 1; i < tabela.rows.length; i++){
 		suma +=parseInt(tabela.rows[i].cells[2].innerHTML);
-	}document.getElementById('suma').innerHTML= "Do zapłaty" + " " +suma;
+    }
+    
+    document.getElementById('suma').innerHTML= "Do zapłaty" + " " +suma;
 };
 
 
@@ -184,7 +216,7 @@ function suma(){
 			{
 		if (tabela.rows[i].cells[0].innerHTML == "okulary")
 				{
-		//		document.getElementById("ilość").value=2;
+		//		document.getElementById("ilosc").value=2;
 				
 			
 				tabela.rows[i].cells[1].innerHTML = 2
