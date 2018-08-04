@@ -1,0 +1,55 @@
+
+<html>
+<head>
+        <title>sklep Mistrzów</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link href="koszyk.html"/> 
+
+</head>
+    
+    
+<body onload="suma();dokoszyka()">
+
+    <h1>
+
+        <image class="logo" src="image/logo.png" onclick="window.location'index.html'"></image>
+        <button class="button"> dla ziomka </button>
+        <button class="button"> dla poziomki</button>
+        <button class="button"> Koszyk </button>
+    
+        <br>
+    
+    </h1>
+
+
+    <div class="INFOokulary">
+        <image class="okulary1" src="image/okulary1.png" ></image>
+        <input id="okular1" class="cena" type="text" value="199.99 zł"/>
+        <button class="dokoszyka" onclick = "dokoszyka1();" value="199.99" name="okulary" id="okulary"> do Koszyka</button>
+    </div>
+    
+    <div class="INFOkoszulka">
+        <image class="koszulka1" src="image/koszulka1.png"></image>
+        <input id="koszulka1" class="cena" type="text" value="499.99 zł"/>
+        <button class="dokoszyka" onclick = "dokoszyka2();"> do Koszyka</button>
+    </div>
+    
+    <div class="tabela">
+    <table border="1"  class="table">
+    
+        <th id="name">produkt</th>
+        <th id="ilość">ilość</th>
+        <th id="cena">cena</th>
+    
+    
+    </table>
+    <br/><br/>
+    </div>
+    
+    <div class="suma">
+    <span  id="suma"></span>
+    </div>
+    
+    <script type="javascript/text" src="basket.js"></script>
+</body>
+</html>
